@@ -4,59 +4,62 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Premium "Midnight & Slate" Palette
+        background: "#F8FAFC", // Slate-50: Crisp, clean background
+        surface: "#FFFFFF", // Pure white for cards
         primary: {
-          50: "#E6F0FA",
-          100: "#CCE0F5",
-          200: "#99C2EB",
-          300: "#66A3E0",
-          400: "#3385D6",
-          500: "#0066CC",
-          600: "#0052A3",
-          700: "#003D7A",
-          800: "#002952",
-          900: "#001429",
+          DEFAULT: "#0F52FF", // Vivid International Blue - energetic but professional
+          hover: "#0047E1",
+          light: "#E5ECFF", // Subtle blue wash
         },
-        secondary: {
-          50: "#E6F6FC",
-          100: "#CCEDF9",
-          500: "#00A3E0",
-          600: "#0082B3",
-          700: "#006286",
-        },
-        accent: {
-          50: "#FFF0EA",
-          100: "#FFE1D6",
-          500: "#FF6B35",
-          600: "#CC562A",
+        navy: {
+          900: "#020617", // Deepest navy for main headings (almost black)
+          800: "#1E293B", // Slate-800 for secondary text
+          /*************************************************************************
+           * NOTE: We keep standard slate/gray scales from Tailwind defaults,
+           * but these specific overrides allow us to semantically usage.
+           *************************************************************************/
         },
         neutral: {
-          50: "#F5F7FA",
-          100: "#E4E7EB",
-          200: "#CBD2D9",
-          300: "#9AA5B1",
-          400: "#7B8794",
-          500: "#616E7C",
-          600: "#52606D",
-          700: "#3E4C59",
-          800: "#323F4B",
-          900: "#1A1A1A",
-          950: "#121212",
+          // Tweaked grays for better contrast
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E293B",
+          900: "#0F172A",
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        heading: ["Poppins", "sans-serif"],
+        sans: ["Inter", "sans-serif"], // Clean, modern body
+        heading: ["Poppins", "sans-serif"], // Geometric headings
       },
       animation: {
-        wave: "wave 2.5s infinite",
-        "ping-slow": "ping 2s cubic-bezier(0, 0, 0.2, 1) infinite",
+        marquee: "marquee 25s linear infinite",
+        "fade-up": "fadeUp 0.5s ease-out forwards",
+        "fade-in": "fadeIn 0.5s ease-out forwards",
       },
       keyframes: {
-        wave: {
-          "0%, 100%": { transform: "rotate(0deg)" },
-          "25%": { transform: "rotate(-10deg)" },
-          "75%": { transform: "rotate(10deg)" },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "hero-gradient": "linear-gradient(135deg, #F8FAFC 0%, #E5ECFF 100%)",
       },
     },
   },

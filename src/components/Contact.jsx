@@ -1,123 +1,70 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Github } from "lucide-react";
 import { Button } from "./ui/Button";
-import { Card } from "./ui/Card";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary-50/50 rounded-full blur-3xl -z-10"></div>
+    <section
+      id="contact"
+      className="py-32 bg-navy-900 text-white relative isolate overflow-hidden"
+    >
+      {/* Subtle Background pattern */}
+      <div
+        className="absolute inset-0 -z-10 opacity-20"
+        style={{
+          backgroundImage: "radial-gradient(#1E293B 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      ></div>
 
       <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 border border-primary-200 rounded-full bg-primary-50 text-primary-700 text-sm font-medium">
-            Get In Touch
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-            Let's work together.
+          <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-8">
+            Ready to scale?
           </h2>
-          <p className="text-xl text-neutral-600 mb-12 max-w-2xl mx-auto">
-            I'm currently looking for new opportunities as a Data Analyst.
-            Whether you have a question or just want to say hi, I'll try my best
-            to get back to you!
+          <p className="text-xl md:text-2xl text-neutral-400 font-light mb-12 max-w-2xl mx-auto">
+            I'm currently opening my schedule for new data analysis and
+            engineering projects. Let's build something efficient.
           </p>
-        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <Card
-              className="p-8 hover:border-primary-200 hover:shadow-lg transition-all flex flex-col items-center gap-4 group cursor-pointer"
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Button
+              size="lg"
+              className="h-16 px-10 rounded-full text-xl bg-white text-navy-900 hover:bg-neutral-200 border-none"
               onClick={() =>
                 (window.location = "mailto:muhammadumarabubakar363@gmail.com")
               }
             >
-              <div className="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 group-hover:scale-110 transition-transform">
-                <Mail size={24} />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">Email Me</h3>
-                <p className="text-sm text-neutral-500">
-                  muhammadumarabubakar363@gmail.com
-                </p>
-              </div>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <Card
-              className="p-8 hover:border-[#0077b5] hover:shadow-lg transition-all flex flex-col items-center gap-4 group cursor-pointer"
-              onClick={() =>
-                window.open(
-                  "https://linkedin.com/in/umar-muhammad-abubakar",
-                  "_blank",
-                )
-              }
-            >
-              <div className="w-12 h-12 rounded-full bg-[#0077b5]/10 flex items-center justify-center text-[#0077b5] group-hover:scale-110 transition-transform">
-                <Linkedin size={24} />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">LinkedIn</h3>
-                <p className="text-sm text-neutral-500">
-                  umar-muhammad-abubakar
-                </p>
-              </div>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <Card
-              className="p-8 hover:border-neutral-800 hover:shadow-lg transition-all flex flex-col items-center gap-4 group cursor-pointer"
-              onClick={() =>
-                window.open("https://github.com/mohimpact", "_blank")
-              }
-            >
-              <div className="w-12 h-12 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-900 group-hover:scale-110 transition-transform">
-                <Github size={24} />
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">GitHub</h3>
-                <p className="text-sm text-neutral-500">mohimpact</p>
-              </div>
-            </Card>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <Button
-            size="lg"
-            className="h-14 px-8 text-lg shadow-xl shadow-primary-500/20"
-            onClick={() => window.open("/resume.pdf", "_blank")}
-          >
-            Download Resume <ArrowRight className="ml-2" size={20} />
-          </Button>
+              Start a Conversation
+            </Button>
+            <div className="flex items-center gap-6 text-neutral-400">
+              <span className="hidden sm:block text-neutral-600">or</span>
+              <a
+                href="https://linkedin.com/in/umar-muhammad-abubakar"
+                className="hover:text-white transition-colors"
+              >
+                <Linkedin size={28} />
+              </a>
+              <a
+                href="https://github.com/mohimpact"
+                className="hover:text-white transition-colors"
+              >
+                <Github size={28} />
+              </a>
+            </div>
+          </div>
         </motion.div>
+      </div>
+
+      {/* Footer embedded in contact for seamless look */}
+      <div className="absolute bottom-6 left-0 right-0 text-center text-neutral-600 text-sm">
+        © {new Date().getFullYear()} Umar Abubakar.
       </div>
     </section>
   );

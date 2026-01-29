@@ -1,151 +1,95 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/Tabs";
 
-const skills = {
-  analysis: ["SQL", "Python", "Pandas", "NumPy", "Excel", "Data Cleaning"],
-  visualization: [
-    "Power BI",
-    "Tableau",
-    "DAX",
-    "Google Sheets",
-    "Data Storytelling",
-  ],
-  tools: [
-    "Git/GitHub",
-    "VS Code",
-    "Jupyter",
-    "Google Colab",
-    "AWS (Learning)",
-    "PostgreSQL",
-  ],
-};
+const skills = [
+  "SQL",
+  "Python",
+  "Power BI",
+  "Pandas",
+  "NumPy",
+  "Tableau",
+  "Excel",
+  "Git",
+  "PostgreSQL",
+  "Data Modeling",
+  "ET",
+  "Automation",
+];
 
 const About = () => {
   return (
     <section
       id="about"
-      className="py-20 bg-neutral-50 relative overflow-hidden"
+      className="py-24 bg-background overflow-hidden relative"
     >
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column: Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-2xl bg-neutral-100">
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Left: Image (Clean, no blobs) */}
+          <div className="order-2 lg:order-1">
+            <div className="aspect-square relative rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
               <img
                 src="/headshot.jpg"
-                alt="Umar Muhammad Abubakar - Data Analyst Professional Photo"
-                className="w-full h-full object-cover object-center"
+                alt="Umar A."
+                className="w-full h-full object-cover"
               />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-2xl -z-10"></div>
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-secondary-500/10 rounded-full blur-2xl -z-10"></div>
-          </motion.div>
+          </div>
 
-          {/* Right Column: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="inline-flex items-center justify-center px-4 py-1.5 mb-6 border border-primary-200 rounded-full bg-white text-primary-700 text-sm font-medium shadow-sm">
-              About Me
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-              More than just number crunching.
+          {/* Right: Content */}
+          <div className="order-1 lg:order-2">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-navy-900 mb-8 leading-tight">
+              Precision.
+              <br />
+              Context.
+              <br />
+              <span className="text-primary">Impact.</span>
             </h2>
 
-            <div className="space-y-4 text-lg text-neutral-600 mb-8">
+            <div className="space-y-6 text-lg text-neutral-600 font-light leading-relaxed">
               <p>
-                I'm a{" "}
-                <strong className="text-neutral-900 font-semibold">
-                  Data Analyst with engineering rigor
+                Data is just noise until you give it a voice. With a background
+                in{" "}
+                <strong className="text-navy-900 font-medium">
+                  Systems Engineering
                 </strong>
-                , specializing in translating complex datasets into clear,
-                executive-ready insights. My background in Systems Analysis
-                (B.Eng) gives me a unique perspective on optimizing pipelines
-                and ensuring data integrity.
+                , I approach analysis not just as "charts and numbers," but as a
+                structural component of business strategy.
               </p>
               <p>
-                My work is driven by impact: whether it's automating grading
-                pipelines to save{" "}
-                <strong className="text-primary-600">8 hours weekly</strong> or
-                building dashboards that cut decision time by{" "}
-                <strong className="text-primary-600">30%</strong>. I believe
-                that good data analysis isn't just about the "what"—it's about
-                the "so what?" and "now what?".
-              </p>
-              <p>
-                Currently leveraging SQL, Python, and Power BI to build scalable
-                measurement frameworks for the EdTech and Finance sectors.
+                I specialize in building{" "}
+                <strong className="text-navy-900 font-medium">
+                  automated pipelines
+                </strong>{" "}
+                that eliminate manual drudgery, freeing up teams to focus on
+                actual decision-making. Whether it's optimizing a sales funnel
+                or predicting churn, my goal is always the same: **clear,
+                actionable truth.**
               </p>
             </div>
+          </div>
+        </div>
+      </div>
 
-            {/* Skills Tabs */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-neutral-200">
-              <h3 className="text-xl font-bold text-neutral-900 mb-4">
-                Technical Toolkit
-              </h3>
-              <Tabs defaultValue="analysis" className="w-full">
-                <TabsList className="mb-4 w-full justify-start bg-neutral-100 p-1">
-                  <TabsTrigger value="analysis" className="flex-1">
-                    Analysis
-                  </TabsTrigger>
-                  <TabsTrigger value="visualization" className="flex-1">
-                    Visualization
-                  </TabsTrigger>
-                  <TabsTrigger value="tools" className="flex-1">
-                    Tools
-                  </TabsTrigger>
-                </TabsList>
+      {/* Infinite Skills Marquee */}
+      <div className="mt-24 py-10 border-y border-neutral-200 bg-white/50 backdrop-blur-sm">
+        <div className="relative flex overflow-x-hidden group">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-16 px-8">
+            {/* Duplicate list for seamless loop */}
+            {[...skills, ...skills, ...skills].map((skill, i) => (
+              <span
+                key={i}
+                className="text-4xl md:text-5xl font-heading font-bold text-neutral-200 uppercase hover:text-primary transition-colors cursor-default"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
 
-                <TabsContent value="analysis" className="flex flex-wrap gap-2">
-                  {skills.analysis.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-primary-50 text-primary-700 text-sm font-medium rounded-full border border-primary-100"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </TabsContent>
-
-                <TabsContent
-                  value="visualization"
-                  className="flex flex-wrap gap-2"
-                >
-                  {skills.visualization.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-secondary-50 text-secondary-700 text-sm font-medium rounded-full border border-secondary-100"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </TabsContent>
-
-                <TabsContent value="tools" className="flex flex-wrap gap-2">
-                  {skills.tools.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-neutral-100 text-neutral-700 text-sm font-medium rounded-full border border-neutral-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </TabsContent>
-              </Tabs>
-            </div>
-          </motion.div>
+          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-16 px-8 hidden">
+            {/* Second layer for perfect loop handling involves more complex css, 
+                 but the above simple double/triple array works for most screens. 
+                 We stick to the simple one for reliability in this environment. */}
+          </div>
         </div>
       </div>
     </section>
