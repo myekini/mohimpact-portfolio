@@ -1,27 +1,47 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Using reliable CDN links for tool logos
 const skills = [
-  "SQL",
-  "Python",
-  "Power BI",
-  "Pandas",
-  "NumPy",
-  "Tableau",
-  "Excel",
-  "Git",
-  "PostgreSQL",
-  "Data Modeling",
-  "ETL",
-  "Automation",
+  {
+    name: "Python",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  },
+  {
+    name: "PostgreSQL",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "Pandas",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+  },
+  {
+    name: "Power BI",
+    url: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
+  },
+  {
+    name: "Excel",
+    url: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg",
+  },
+  {
+    name: "Git",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "NumPy",
+    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
+  },
+  {
+    name: "Tableau",
+    url: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg",
+  },
 ];
 
-// Replaced the image with a pure "Benefit-Driven" grid to avoid "two heads"
 const About = () => {
   return (
     <section
       id="about"
-      className="py-24 bg-surface border-t border-border overflow-hidden relative"
+      className="py-24 bg-surface border-t border-border overflow-hidden relative transition-colors duration-300"
     >
       <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
@@ -40,7 +60,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* The "Why Hire Me" Grid (Replaces the second headshot) */}
+        {/* The "Why Hire Me" Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 */}
           <div className="p-8 bg-background rounded-2xl border border-border hover:border-primary/50 transition-colors group">
@@ -89,18 +109,24 @@ const About = () => {
         </div>
       </div>
 
-      {/* Infinite Skills Marquee */}
+      {/* Infinite Skills Marquee with LOGOS */}
       <div className="mt-24 py-10 border-y border-border bg-background/50 backdrop-blur-sm">
         <div className="relative flex overflow-x-hidden group">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-16 px-8">
             {/* Duplicate list for loop */}
-            {[...skills, ...skills, ...skills].map((skill, i) => (
-              <span
+            {[...skills, ...skills, ...skills, ...skills].map((skill, i) => (
+              <div
                 key={i}
-                className="text-4xl md:text-5xl font-heading font-bold text-muted/20 uppercase hover:text-primary transition-colors cursor-default select-none"
+                className="flex flex-col items-center gap-4 group/icon"
               >
-                {skill}
-              </span>
+                <div className="relative w-16 h-16 grayscale opacity-60 group-hover/icon:grayscale-0 group-hover/icon:opacity-100 transition-all duration-300">
+                  <img
+                    src={skill.url}
+                    alt={skill.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </div>
