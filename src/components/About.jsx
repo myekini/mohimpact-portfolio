@@ -119,7 +119,7 @@ const About = () => {
                 key={i}
                 className="flex flex-col items-center gap-4 group/icon"
               >
-                <div className="relative w-16 h-16 grayscale opacity-60 group-hover/icon:grayscale-0 group-hover/icon:opacity-100 transition-all duration-300">
+                <div className="relative w-16 h-16 grayscale group-hover/icon:grayscale-0 group-hover/icon:scale-110 transition-all duration-300">
                   <img
                     src={skill.url}
                     alt={skill.name}
