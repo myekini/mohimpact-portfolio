@@ -37,11 +37,11 @@ const Contact = () => {
             <Button
               size="lg"
               className="h-16 px-10 rounded-full text-xl bg-background text-foreground hover:bg-background/90 border-none"
-              onClick={() =>
-                (window.location = "mailto:muhammadumarabubakar363@gmail.com")
-              }
+              asChild
             >
-              Start a Conversation
+              <a href="mailto:muhammadumarabubakar363@gmail.com">
+                Start a Conversation
+              </a>
             </Button>
             <div className="flex items-center gap-6 text-background/60">
               <span className="hidden sm:block">or</span>

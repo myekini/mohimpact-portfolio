@@ -21,7 +21,7 @@ const skills = [
   },
   {
     name: "Excel",
-    url: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg",
+    url: "https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg",
   },
   {
     name: "Git",

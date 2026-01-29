@@ -77,20 +77,26 @@ const Hero = () => {
                 variant="ghost"
                 size="lg"
                 className="rounded-full h-14 px-8 text-lg text-muted-foreground hover:text-foreground hover:bg-muted"
-                onClick={() => window.open("/resume.pdf", "_blank")}
+                asChild
               >
-                Download CV <Download size={20} className="ml-2" />
+                <a
+                  href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:4b9cd427-686d-47d5-82ac-05ba165d65f1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Resume <Download size={20} className="ml-2" />
+                </a>
               </Button>
             </motion.div>
           </div>
 
           {/* Right Column: Headshot */}
-          <div className="lg:col-span-5 relative order-1 lg:order-2">
+          <div className="lg:col-span-5 relative order-1 lg:order-2 flex justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "circOut" }}
-              className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-black/20 dark:shadow-primary/10 border-4 border-surface"
+              className="relative w-full max-w-md aspect-[4/5] rounded-t-[160px] rounded-b-[24px] overflow-hidden shadow-2xl shadow-indigo-500/10 dark:shadow-indigo-500/5 border-4 border-surface/50"
             >
               <img
                 src="/headshot.jpg"
