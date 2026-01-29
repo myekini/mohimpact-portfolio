@@ -8,7 +8,7 @@ const projects = [
     description:
       "End-to-end finance dashboard processing 1,800+ transactions. Engineered automated categorization and monthly budget tracking with 20% improvement potential identified.",
     tags: ["Google Sheets", "Pivot Tables", "Data Viz"],
-    image: "bg-emerald-500/10 dark:bg-emerald-500/5",
+    image: "/project-finance.png",
     accent: "text-emerald-600 dark:text-emerald-400",
     links: {
       github: "https://github.com/mohimpact/opay-finance-analysis",
@@ -20,7 +20,7 @@ const projects = [
     description:
       "Interactive Power BI dashboard for analyzing student attendance patterns. Features complex DAX measures for attendance rates and drill-down.",
     tags: ["Power BI", "DAX", "Data Modeling"],
-    image: "bg-amber-500/10 dark:bg-amber-500/5",
+    image: "/project-attendance.png",
     accent: "text-amber-600 dark:text-amber-400",
     links: {
       github:
@@ -33,7 +33,7 @@ const projects = [
     description:
       "Sales performance dashboard tracking revenue by category and payment method. Implemented dynamic filtering enabling stakeholders to identify seasonal trends.",
     tags: ["Excel", "Advanced Formulas", "Dashboard"],
-    image: "bg-blue-500/10 dark:bg-blue-500/5",
+    image: "/project-retail.png",
     accent: "text-blue-600 dark:text-blue-400",
     links: {
       github: "https://github.com/mohimpact/retail-store-sales-analysis",
@@ -86,11 +86,15 @@ const Projects = () => {
               className="group flex flex-col h-full"
             >
               {/* Image Area */}
-              <div
-                className={`aspect-[16/10] rounded-2xl ${project.image} mb-6 relative overflow-hidden transition-all duration-500 border border-transparent hover:border-border`}
-              >
+              <div className="aspect-[16/10] rounded-2xl mb-6 relative overflow-hidden transition-all duration-500 border border-transparent hover:border-border group-hover:shadow-xl">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
                 {/* Links Overlay */}
-                <div className="absolute inset-0 bg-background/50 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
+                <div className="absolute inset-0 bg-background/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
                   <a
                     href={project.links.github}
                     target="_blank"
@@ -112,7 +116,7 @@ const Projects = () => {
                 </div>
 
                 {/* ID Number */}
-                <div className="absolute bottom-4 left-4 font-heading font-bold text-2xl opacity-10 text-foreground">
+                <div className="absolute top-4 left-4 font-heading font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/90 px-3 py-1 rounded-full text-foreground border border-border">
                   0{index + 1}
                 </div>
               </div>
