@@ -37,16 +37,12 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-2xl bg-neutral-200">
-              {/* Use a solid color or gradient as placeholder until user adds image */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-800 to-primary-500 flex items-center justify-center p-8 text-center">
-                <div className="text-white/80">
-                  <p className="text-lg font-medium mb-2">
-                    Umar Muhammad Abubakar
-                  </p>
-                  <p className="text-sm opacity-75">B.Eng Systems Analysis</p>
-                </div>
-              </div>
+            <div className="aspect-[3/4] relative rounded-2xl overflow-hidden shadow-2xl bg-neutral-100">
+              <img
+                src="/headshot.jpg"
+                alt="Umar Muhammad Abubakar - Data Analyst Professional Photo"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             {/* Decorative elements */}
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-2xl -z-10"></div>

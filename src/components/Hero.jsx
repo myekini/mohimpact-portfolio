@@ -145,14 +145,12 @@ const Hero = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-200/50 rounded-full blur-3xl -z-10"></div>
 
               {/* Main Image Container */}
-              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 relative bg-neutral-800">
-                {/* Placeholder for Headshot */}
-                <div className="w-full h-full bg-gradient-to-b from-neutral-700 to-neutral-900 flex items-center justify-center p-8 text-center">
-                  <div className="text-neutral-300">
-                    <p className="font-bold text-xl mb-2">Umar Abubakar</p>
-                    <p className="text-sm opacity-70">Data Analyst</p>
-                  </div>
-                </div>
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 relative bg-neutral-100">
+                <img
+                  src="/headshot.jpg"
+                  alt="Umar Muhammad Abubakar - Data Analyst"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
 
               {/* Floating Card 1: Records */}
