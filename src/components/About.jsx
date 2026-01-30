@@ -68,12 +68,11 @@ const About = () => {
               🚀
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">
-              Efficiency First
+              Process Automation
             </h3>
             <p className="text-muted-foreground">
-              I look for <strong>automation opportunities</strong> everywhere.
-              If it takes you 4 hours a week manually, I'll write a Python
-              script to do it in 4 seconds.
+              I automate repetitive tasks using Python, saving hours of manual
+              work every week.
             </p>
           </div>
 
@@ -83,12 +82,11 @@ const About = () => {
               💡
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">
-              Business Context
+              Strategic Insight
             </h3>
             <p className="text-muted-foreground">
-              Data without context is noise. I start every project by asking{" "}
-              <strong>"What business decision does this drive?"</strong> to
-              ensure impact.
+              I focus on the "why" behind the data to drive smarter business
+              decisions.
             </p>
           </div>
 
@@ -98,12 +96,11 @@ const About = () => {
               🛠️
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3">
-              Full Stack Analyst
+              Full Stack Analysis
             </h3>
             <p className="text-muted-foreground">
-              From <strong>SQL</strong> extraction to <strong>Python</strong>{" "}
-              transformation and <strong>Power BI</strong> visualization, I own
-              the entire data lifecycle.
+              Proficient in SQL extraction, Python transformation, and Power BI
+              visualization.
             </p>
           </div>
         </div>

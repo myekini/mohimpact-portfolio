@@ -42,7 +42,7 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="block text-primary"
               >
-                Visionary.
+                Intelligence.
               </motion.span>
             </h1>
 
@@ -52,10 +52,11 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg md:text-2xl text-muted-foreground max-w-xl font-light leading-relaxed text-balance"
             >
-              I help companies turn data transparency into{" "}
-              <span className="text-foreground font-medium">profit</span>.
-              Specializing in automated pipelines, predictive modeling, and
-              executive intelligence.
+              I turn raw data into{" "}
+              <span className="text-foreground font-medium">
+                clear decisions
+              </span>
+              . Specializing in automated reporting and actionable dashboards.
             </motion.p>
 
             <motion.div

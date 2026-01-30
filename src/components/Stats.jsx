@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "60K+", label: "Records Analyzed" },
-  { value: "30%", label: "Faster Decisions" },
-  { value: "100%", label: "Accuracy Rate" },
-  { value: "8hrs", label: "Saved Weekly" },
+  { value: "50+", label: "Projects Completed" },
+  { value: "30%", label: "Efficiency Gain" },
+  { value: "98%", label: "Data Accuracy" },
+  { value: "10+", label: "Tools Mastered" },
 ];
 
 const Stats = () => {
