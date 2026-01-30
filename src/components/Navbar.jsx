@@ -5,9 +5,19 @@ import { cn } from "../lib/utils";
 import { Button } from "./ui/Button";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      document.documentElement.classList.add("dark");
+      return "dark";
+    }
+    return "light";
+  });
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
 
   // Handle Scroll Effect
   useEffect(() => {
@@ -18,14 +28,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle Theme Toggle
-  useEffect(() => {
-    // Check system preference on load
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
+  // Theme effect handled in initialization now
 
   const toggleTheme = () => {
     if (theme === "light") {
